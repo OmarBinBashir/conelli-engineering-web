@@ -53,3 +53,5 @@ The following environment variables are required:
 - Sanity CMS
 - Resend (Email Service)
 - Cloudinary (Image CDN)
+
+<!-- Test commit to trigger deployment -->
