@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Building2, Road, Home, Landmark, Factory, ClipboardList } from 'lucide-react';
+import { Building2, Construction, Home, Landmark, Factory, ClipboardList } from 'lucide-react';
 
 const ServiceHighlights: React.FC = () => {
   const services = [
@@ -8,7 +8,7 @@ const ServiceHighlights: React.FC = () => {
       id: 'infrastructure',
       title: 'Infrastructure Development',
       description: 'Design and construction of roads, bridges, water systems and other vital public infrastructure.',
-      icon: <Road className="h-12 w-12 text-dark-gray mb-4" />,
+      icon: <Construction className="h-12 w-12 text-dark-gray mb-4" />,
     },
     {
       id: 'commercial',
