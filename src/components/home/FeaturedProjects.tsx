@@ -44,7 +44,7 @@ const FeaturedProjects: React.FC = () => {
             </p>
           </div>
           <Link 
-            href="/projects" 
+            href="/project-references" 
             className="mt-4 md:mt-0 inline-flex items-center text-dark-gray hover:underline font-medium"
           >
             View All Projects <ArrowRight className="ml-2 h-4 w-4" />
@@ -54,7 +54,7 @@ const FeaturedProjects: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Link 
-              href={`/projects/${project.id}`} 
+              href={`/project-references/${project.id}`} 
               key={project.id}
               className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
             >

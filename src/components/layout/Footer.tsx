@@ -69,9 +69,9 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
-                { label: 'About Us', href: '/about' },
-                { label: 'Our Services', href: '/services' },
-                { label: 'Projects Portfolio', href: '/projects' },
+                { label: 'About Us', href: '/group/about-us' },
+                { label: 'Our Services', href: '/expertise' },
+                { label: 'Projects Portfolio', href: '/project-references' },
                 { label: 'Sustainability', href: '/sustainability' },
                 { label: 'Careers', href: '/careers' },
                 { label: 'Contact Us', href: '/contact' },
@@ -94,12 +94,12 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               {[
-                { label: 'Infrastructure Development', href: '/services#infrastructure' },
-                { label: 'Commercial Construction', href: '/services#commercial' },
-                { label: 'Residential Projects', href: '/services#residential' },
-                { label: 'Real Estate Development', href: '/services#real-estate' },
-                { label: 'Industrial Facilities', href: '/services#industrial' },
-                { label: 'Project Management', href: '/services#project-management' },
+                { label: 'Infrastructure Development', href: '/expertise#infrastructure' },
+                { label: 'Commercial Construction', href: '/expertise#commercial' },
+                { label: 'Residential Projects', href: '/expertise#residential' },
+                { label: 'Real Estate Development', href: '/expertise#real-estate' },
+                { label: 'Industrial Facilities', href: '/expertise#industrial' },
+                { label: 'Project Management', href: '/expertise#project-management' },
               ].map((link, index) => (
                 <li key={index}>
                   <Link 

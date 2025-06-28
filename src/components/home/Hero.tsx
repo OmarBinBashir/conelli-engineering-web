@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
-              href="/projects" 
+              href="/project-references" 
               className="bg-white text-dark-gray px-8 py-4 rounded-md font-medium hover:bg-gray-100 transition-all"
             >
               View Our Projects

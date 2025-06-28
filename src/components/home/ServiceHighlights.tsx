@@ -65,7 +65,7 @@ const ServiceHighlights: React.FC = () => {
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
               <Link 
-                href={`/services#${service.id}`} 
+                href={`/expertise#${service.id}`} 
                 className="inline-block text-dark-gray font-medium hover:underline"
               >
                 Learn more
@@ -76,7 +76,7 @@ const ServiceHighlights: React.FC = () => {
         
         <div className="mt-12 text-center">
           <Link
-            href="/services"
+            href="/expertise"
             className="bg-dark-gray text-white px-8 py-4 rounded-md font-medium hover:bg-gray-800 transition-all"
           >
             Explore All Services

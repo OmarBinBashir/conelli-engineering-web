@@ -29,7 +29,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, selectedCategory })
       {filteredProjects.length > 0 ? (
         filteredProjects.map((project) => (
           <Link 
-            href={`/projects/${project.id}`} 
+            href={`/project-references/${project.id}`} 
             key={project.id}
             className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
           >

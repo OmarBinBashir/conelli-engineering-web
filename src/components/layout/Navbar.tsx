@@ -38,9 +38,9 @@ const Navbar: React.FC<NavbarProps> = ({ isMobile = false, onLinkClick }) => {
   // In a real application, we would use Next.js usePathname() hook to determine the active link
   const navLinks = [
     { href: '/', key: 'home', label: 'Home' },
-    { href: '/about', key: 'about', label: 'About' },
-    { href: '/services', key: 'services', label: 'Services' },
-    { href: '/projects', key: 'projects', label: 'Projects' },
+    { href: '/group/about-us', key: 'about', label: 'About' },
+    { href: '/expertise', key: 'services', label: 'Services' },
+    { href: '/project-references', key: 'projects', label: 'Projects' },
     { href: '/sustainability', key: 'sustainability', label: 'Sustainability' },
     { href: '/careers', key: 'careers', label: 'Careers' },
     { href: '/contact', key: 'contact', label: 'Contact' },
