@@ -6,14 +6,14 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-gray text-white">
+    <footer className="bg-slate-900 text-white">
       {/* Main Footer */}
-      <div className="container mx-auto py-12 px-4">
+      <div className="container mx-auto py-12 lg:py-16 px-6 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Information */}
           <div>
             <h3 className="text-xl font-bold mb-4">Conelli Engineering</h3>
-            <p className="mb-6 text-gray-300">
+            <p className="mb-6 text-slate-300">
               Building Nigeria's future through world-class engineering, innovation, and sustainable construction solutions since 2016.
             </p>
             <div className="flex space-x-4">
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 <li key={index}>
                   <Link 
                     href={link.href}
-                    className="flex items-center text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center text-slate-300 hover:text-white transition-colors"
                   >
                     <ArrowRight size={16} className="mr-2" />
                     <span>{link.label}</span>
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
                 <li key={index}>
                   <Link 
                     href={link.href}
-                    className="flex items-center text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center text-slate-300 hover:text-white transition-colors"
                   >
                     <ArrowRight size={16} className="mr-2" />
                     <span>{link.label}</span>
@@ -119,33 +119,33 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="mr-3 h-5 w-5 flex-shrink-0 text-gray-300" />
-                <span className="text-gray-300">
+                <MapPin className="mr-3 h-5 w-5 flex-shrink-0 text-slate-300" />
+                <span className="text-slate-300">
                   No 28, Jummai Kwanashie Street, Off Bala Adamu Crescent, Citec Villas, Gwarinpa, Abuja, Nigeria
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-gray-300" />
-                <a href="tel:+2348038961425" className="text-gray-300 hover:text-white transition-colors">
+                <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-slate-300" />
+                <a href="tel:+2348038961425" className="text-slate-300 hover:text-white transition-colors">
                   +234 803 896 1425
                 </a>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-gray-300" />
-                <a href="tel:+2348039900015" className="text-gray-300 hover:text-white transition-colors">
+                <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-slate-300" />
+                <a href="tel:+2348039900015" className="text-slate-300 hover:text-white transition-colors">
                   +234 803 990 0015
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-3 h-5 w-5 flex-shrink-0 text-gray-300" />
-                <a href="mailto:conelliengineeringlimited@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                <Mail className="mr-3 h-5 w-5 flex-shrink-0 text-slate-300" />
+                <a href="mailto:conelliengineeringlimited@gmail.com" className="text-slate-300 hover:text-white transition-colors">
                   conelliengineeringlimited@gmail.com
                 </a>
               </li>
             </ul>
             <div className="mt-6">
               <h4 className="font-medium mb-3">Working Hours:</h4>
-              <p className="text-gray-300">
+              <p className="text-slate-300">
                 Monday - Friday: 8:00 AM - 5:00 PM<br />
                 Saturday: 9:00 AM - 1:00 PM<br />
                 Sunday: Closed
@@ -157,18 +157,18 @@ const Footer: React.FC = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300 text-center md:text-left mb-4 md:mb-0">
+        <div className="container mx-auto py-6 px-6 sm:px-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-slate-300 text-center md:text-left mb-4 md:mb-0">
             &copy; {currentYear} Conelli Engineering Limited. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/privacy-policy" className="text-sm text-gray-300 hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="text-sm text-slate-300 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="text-sm text-gray-300 hover:text-white transition-colors">
+            <Link href="/terms-of-service" className="text-sm text-slate-300 hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link href="/sitemap" className="text-sm text-gray-300 hover:text-white transition-colors">
+            <Link href="/sitemap" className="text-sm text-slate-300 hover:text-white transition-colors">
               Sitemap
             </Link>
           </div>

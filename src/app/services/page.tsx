@@ -8,7 +8,7 @@ export default function ServicesPage() {
       id: 'infrastructure',
       title: 'Infrastructure Development',
       description: 'We design and build critical infrastructure that forms the backbone of community development and economic growth.',
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Infrastructure+Development',
       features: [
         'Roads and highways',
         'Bridges and flyovers',
@@ -21,7 +21,7 @@ export default function ServicesPage() {
       id: 'commercial',
       title: 'Commercial Construction',
       description: 'From office towers to retail complexes, we create commercial spaces that combine functionality, aesthetics, and sustainability.',
-      image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Commercial+Construction',
       features: [
         'Office buildings',
         'Shopping centers',
@@ -34,7 +34,7 @@ export default function ServicesPage() {
       id: 'residential',
       title: 'Residential Construction',
       description: 'We build quality homes and residential complexes that provide comfort, safety, and value to homeowners and residents.',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Residential+Construction',
       features: [
         'High-rise apartments',
         'Gated communities',
@@ -47,7 +47,7 @@ export default function ServicesPage() {
       id: 'real-estate',
       title: 'Real Estate Development',
       description: 'Our comprehensive approach to real estate development combines market insights with technical expertise to maximize property value.',
-      image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Real+Estate+Development',
       features: [
         'Land acquisition and due diligence',
         'Project conceptualization',
@@ -60,7 +60,7 @@ export default function ServicesPage() {
       id: 'industrial',
       title: 'Industrial Projects',
       description: 'We design and construct industrial facilities that optimize operational efficiency while meeting rigorous safety standards.',
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Industrial+Projects',
       features: [
         'Manufacturing facilities',
         'Warehouses and logistics centers',
@@ -73,7 +73,7 @@ export default function ServicesPage() {
       id: 'manufacturing',
       title: 'Product Manufacturing',
       description: 'We manufacture high-quality construction products that meet international standards and enhance project efficiency.',
-      image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
+      image: 'https://placehold.co/800x600/e2e8f0/64748b?text=Product+Manufacturing',
       features: [
         'Driveover Concrete Cover Series',
         'Tilemaster T50',
@@ -87,20 +87,20 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center bg-dark-gray">
+      <section className="relative h-[40vh] flex items-center bg-slate-900">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
-            alt="Conelli Engineering Services"
+            src="https://placehold.co/1600x900/e2e8f0/64748b?text=Our+Services+Banner"
+            alt="Conelli Engineering Services banner image"
             fill
             priority
             className="object-cover opacity-40"
           />
         </div>
-        <div className="container mx-auto px-4 z-10 text-white">
+        <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
           <AnimatedSection>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-            <p className="text-xl max-w-3xl">
+            <p className="text-xl max-w-3xl text-slate-200">
               Comprehensive engineering and construction services delivered with excellence and precision.
             </p>
           </AnimatedSection>
@@ -109,11 +109,11 @@ export default function ServicesPage() {
 
       {/* Services Overview */}
       <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="container mx-auto px-6 sm:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Comprehensive Engineering Solutions</h2>
-              <p className="text-lg max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4 text-slate-900">Comprehensive Engineering Solutions</h2>
+              <p className="text-lg max-w-3xl mx-auto text-slate-600">
                 Conelli Engineering offers end-to-end services from project conceptualization and design to 
                 construction and handover. Our integrated approach ensures seamless project execution.
               </p>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                 <a
                   key={index}
                   href={`#${service.id}`}
-                  className="bg-gray-100 hover:bg-dark-gray hover:text-white text-center py-4 px-2 rounded-md transition-colors text-sm"
+                  className="bg-slate-50 hover:bg-slate-800 hover:text-white text-center py-4 px-2 rounded-md transition-colors text-sm text-slate-800"
                 >
                   {service.title}
                 </a>
@@ -140,31 +140,31 @@ export default function ServicesPage() {
         <AnimatedSection key={index}>
           <section 
             id={service.id} 
-            className={`py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}`}
+            className={`py-20 lg:py-28 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
           >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-6 sm:px-8">
               <div className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                   <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`An image representing ${service.title}`}
                       fill
                       className="object-cover"
                     />
                   </div>
                 </div>
                 <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <h2 className="text-3xl font-bold mb-6">{service.title}</h2>
-                  <p className="text-lg mb-6">{service.description}</p>
-                  <h3 className="text-xl font-semibold mb-4">Key Services:</h3>
+                  <h2 className="text-3xl font-bold mb-6 text-slate-900">{service.title}</h2>
+                  <p className="text-lg mb-6 text-slate-600">{service.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-slate-900">Key Services:</h3>
                   <ul className="space-y-2">
                     {service.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start">
-                        <svg className="h-6 w-6 text-dark-gray mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-6 w-6 text-slate-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>{feature}</span>
+                        <span className="text-slate-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -177,8 +177,8 @@ export default function ServicesPage() {
 
       {/* Our Approach */}
       <AnimatedSection>
-        <section className="py-24 bg-dark-gray text-white">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-slate-900 text-white">
+          <div className="container mx-auto px-6 sm:px-8">
             <h2 className="text-3xl font-bold mb-12 text-center">Our Approach</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[
@@ -204,10 +204,10 @@ export default function ServicesPage() {
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} delay={index * 0.1}>
-                  <div className="bg-gray-800/50 p-6 rounded-lg text-center relative">
+                  <div className="bg-slate-800/50 p-6 rounded-lg text-center relative">
                     <span className="text-4xl mb-4 inline-block">{item.icon}</span>
                     <h3 className="text-xl font-bold mb-3">{item.step}</h3>
-                    <p>{item.description}</p>
+                    <p className="text-slate-200">{item.description}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -218,16 +218,16 @@ export default function ServicesPage() {
 
       {/* Call to Action */}
       <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p className="text-lg max-w-3xl mx-auto mb-8">
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="container mx-auto px-6 sm:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Ready to Start Your Project?</h2>
+            <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-600">
               Contact us today to discuss how Conelli Engineering can help bring your vision to life with 
               our comprehensive engineering and construction services.
             </p>
             <Link 
               href="/contact" 
-              className="bg-dark-gray text-white px-8 py-4 rounded-md font-medium hover:bg-gray-800 transition-all"
+              className="bg-slate-800 text-white px-8 py-4 rounded-md font-medium hover:bg-slate-900 transition-all focus:ring-2 focus:ring-slate-500"
             >
               Get in Touch
             </Link>

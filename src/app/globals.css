@@ -13,8 +13,8 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
-  /* Primary - Dark Grey */
-  --primary: 0 0% 20%; /* #333333 */
+  /* Primary - Slate Grey */
+  --primary: 215.4 16.3% 46.9%; /* slate-600 */
   --primary-foreground: 210 40% 98%;
 
   /* Secondary */
@@ -36,7 +36,7 @@
   /* Border */
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --ring: 215.4 16.3% 46.9%;
 
   /* Border radius */
   --radius: 0.5rem;
@@ -87,43 +87,43 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #64748b;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #475569;
 }
 
 /* Custom styles for the Conelli Engineering website */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-dark-gray to-gray-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600;
 }
 
 .section-heading {
-  @apply text-3xl md:text-4xl font-bold mb-6;
+  @apply text-3xl md:text-4xl font-bold mb-6 text-slate-900;
 }
 
 .container {
-  @apply px-4 md:px-6;
+  @apply px-6 sm:px-8;
 }
 
 /* Hero section overlay */
 .hero-overlay {
-  @apply absolute inset-0 bg-gradient-to-r from-dark-gray/80 to-dark-gray/40 z-0;
+  @apply absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-0;
 }
 
 /* Button styles */
 .btn-primary {
-  @apply bg-dark-gray text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-all;
+  @apply bg-slate-800 text-white px-6 py-3 rounded-md font-medium hover:bg-slate-900 transition-all focus:ring-2 focus:ring-slate-500;
 }
 
 .btn-secondary {
-  @apply border border-dark-gray text-dark-gray px-6 py-3 rounded-md font-medium hover:bg-dark-gray hover:text-white transition-all;
+  @apply border border-slate-800 text-slate-800 px-6 py-3 rounded-md font-medium hover:bg-slate-800 hover:text-white transition-all focus:ring-2 focus:ring-slate-500;
 }
 
 /* Card styling */
@@ -133,7 +133,7 @@ body {
 
 /* Project card overlay */
 .project-card-overlay {
-  @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity;
+  @apply absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity;
 }
 
 /* Animating dot for loading states */
@@ -154,8 +154,6 @@ body {
 .loading-dot:nth-child(3) {
   animation-delay: 0.4s;
 }
-
-
 
 @layer base {
   :root {
@@ -213,8 +211,6 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -222,4 +218,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-} 
+}

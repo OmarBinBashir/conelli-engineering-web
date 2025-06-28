@@ -11,22 +11,22 @@ export default function HomePage() {
       <section className="relative h-[80vh] flex items-center bg-slate-900">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg" 
-            alt="Conelli Engineering Projects"
+            src="https://placehold.co/1920x1080/e2e8f0/64748b?text=Hero+Banner" 
+            alt="A large banner image for the hero section"
             fill
             priority
             className="object-cover opacity-50"
           />
         </div>
-        <div className="container mx-auto px-4 z-10 text-white">
+        <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
           <AnimatedSection>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               Engineering Excellence for Nigeria's Future
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300">
+            <p className="text-xl md:text-2xl mb-8 max-w-2xl text-slate-200">
               Delivering world-class engineering solutions with precision, innovation, and integrity
             </p>
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="bg-white text-slate-900 hover:bg-slate-100">
               <Link href="/projects">Explore Our Projects</Link>
             </Button>
           </AnimatedSection>
@@ -35,24 +35,24 @@ export default function HomePage() {
 
       {/* Key Statistics */}
       <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="container mx-auto px-6 sm:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <div className="text-3xl md:text-4xl font-bold text-dark-gray mb-2">Since 2016</div>
-                <div className="text-gray-600">Years of Experience</div>
+              <div className="bg-slate-50 p-8 rounded-lg">
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Since 2016</div>
+                <div className="text-slate-600">Years of Experience</div>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <div className="text-3xl md:text-4xl font-bold text-dark-gray mb-2">50+</div>
-                <div className="text-gray-600">Projects Completed</div>
+              <div className="bg-slate-50 p-8 rounded-lg">
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">50+</div>
+                <div className="text-slate-600">Projects Completed</div>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <div className="text-3xl md:text-4xl font-bold text-dark-gray mb-2">100%</div>
-                <div className="text-gray-600">Project Delivery</div>
+              <div className="bg-slate-50 p-8 rounded-lg">
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">100%</div>
+                <div className="text-slate-600">Project Delivery</div>
               </div>
-              <div className="bg-gray-50 p-8 rounded-lg">
-                <div className="text-3xl md:text-4xl font-bold text-dark-gray mb-2">Abuja & Kaduna</div>
-                <div className="text-gray-600">Key Operational Areas</div>
+              <div className="bg-slate-50 p-8 rounded-lg">
+                <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Abuja & Kaduna</div>
+                <div className="text-slate-600">Key Operational Areas</div>
               </div>
             </div>
           </div>
@@ -61,20 +61,20 @@ export default function HomePage() {
 
       {/* Company Intro */}
       <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="container mx-auto px-6 sm:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">About Conelli Engineering</h2>
-                <p className="text-lg mb-6 text-gray-600">
+                <h2 className="text-3xl font-bold mb-6 text-slate-900">About Conelli Engineering</h2>
+                <p className="text-lg mb-6 text-slate-600">
                   Founded in 2016, Conelli Engineering Limited has grown to become one of Nigeria's most trusted engineering firms. With a commitment to quality and innovation, we've delivered over 50 successful projects across the country.
                 </p>
-                <p className="text-lg mb-6 text-gray-600">
+                <p className="text-lg mb-6 text-slate-600">
                   Our team of highly qualified engineers, architects, and project managers work together to transform complex challenges into elegant solutions, focusing on solving Africa's unique infrastructure challenges.
                 </p>
                 <Link 
                   href="/about" 
-                  className="text-slate-900 font-medium flex items-center hover:underline"
+                  className="text-slate-800 font-medium flex items-center hover:text-slate-600 transition-colors"
                 >
                   Learn more about us
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -83,34 +83,34 @@ export default function HomePage() {
                 </Link>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-6">Our Core Values</h3>
+                <h3 className="text-2xl font-bold mb-6 text-slate-900">Our Core Values</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <ShieldCheck className="h-6 w-6 text-amber-400 mr-3 mt-1" />
+                    <ShieldCheck className="h-6 w-6 text-slate-600 mr-3 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Integrity</h4>
-                      <p className="text-gray-600">Honest and ethical business practices in all our operations</p>
+                      <h4 className="font-semibold text-slate-900">Integrity</h4>
+                      <p className="text-slate-600">Honest and ethical business practices in all our operations</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Lightbulb className="h-6 w-6 text-amber-400 mr-3 mt-1" />
+                    <Lightbulb className="h-6 w-6 text-slate-600 mr-3 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Innovation</h4>
-                      <p className="text-gray-600">Pushing boundaries with cutting-edge solutions</p>
+                      <h4 className="font-semibold text-slate-900">Innovation</h4>
+                      <p className="text-slate-600">Pushing boundaries with cutting-edge solutions</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Award className="h-6 w-6 text-amber-400 mr-3 mt-1" />
+                    <Award className="h-6 w-6 text-slate-600 mr-3 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Excellence</h4>
-                      <p className="text-gray-600">Uncompromising commitment to quality and standards</p>
+                      <h4 className="font-semibold text-slate-900">Excellence</h4>
+                      <p className="text-slate-600">Uncompromising commitment to quality and standards</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Leaf className="h-6 w-6 text-amber-400 mr-3 mt-1" />
+                    <Leaf className="h-6 w-6 text-slate-600 mr-3 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Sustainability</h4>
-                      <p className="text-gray-600">Building for a better, greener future</p>
+                      <h4 className="font-semibold text-slate-900">Sustainability</h4>
+                      <p className="text-slate-600">Building for a better, greener future</p>
                     </div>
                   </li>
                 </ul>
@@ -122,11 +122,11 @@ export default function HomePage() {
 
       {/* Core Services Section */}
       <AnimatedSection>
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-slate-50">
+          <div className="container mx-auto px-6 sm:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Our Expertise</h2>
-              <p className="text-lg max-w-3xl mx-auto text-gray-600">
+              <h2 className="text-3xl font-bold mb-4 text-slate-900">Our Expertise</h2>
+              <p className="text-lg max-w-3xl mx-auto text-slate-600">
                 From concept design to project completion, we offer integrated engineering services that meet the highest standards of quality and safety.
               </p>
             </div>
@@ -149,13 +149,13 @@ export default function HomePage() {
                 },
               ].map((service, index) => (
                 <AnimatedSection key={index} delay={index * 0.1}>
-                  <div className="bg-slate-800 p-8 rounded-lg text-white">
-                    <service.icon className="h-12 w-12 text-amber-400 mb-4" />
+                  <div className="bg-slate-900 p-8 rounded-lg text-white">
+                    <service.icon className="h-12 w-12 text-slate-300 mb-4" />
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="mb-4 text-gray-300">{service.description}</p>
+                    <p className="mb-4 text-slate-200">{service.description}</p>
                     <Link 
                       href="/services" 
-                      className="text-amber-400 font-medium hover:underline"
+                      className="text-slate-300 font-medium hover:text-white transition-colors"
                     >
                       Learn more
                     </Link>
@@ -169,16 +169,16 @@ export default function HomePage() {
 
       {/* Featured Projects Section */}
       <AnimatedSection>
-        <section className="py-24 bg-slate-900 text-white">
-          <div className="container mx-auto px-4">
+        <section className="py-20 lg:py-28 bg-slate-900 text-white">
+          <div className="container mx-auto px-6 sm:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Our Signature Work</h2>
-              <p className="text-lg max-w-3xl mx-auto text-gray-300">
+              <p className="text-lg max-w-3xl mx-auto text-slate-200">
                 Explore our portfolio of completed projects that showcase our expertise in engineering excellence and innovative solutions.
               </p>
             </div>
             <div className="text-center">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="bg-white text-slate-900 hover:bg-slate-100">
                 <Link href="/projects">View Our Projects</Link>
               </Button>
             </div>
@@ -188,13 +188,13 @@ export default function HomePage() {
 
       {/* Call to Action Section */}
       <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Have a Project in Mind?</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600">
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="container mx-auto px-6 sm:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-4 text-slate-900">Have a Project in Mind?</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
               Let's discuss how we can bring your vision to life with our expertise and commitment to excellence.
             </p>
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="bg-slate-800 text-white hover:bg-slate-900">
               <Link href="/contact">Get In Touch</Link>
             </Button>
           </div>

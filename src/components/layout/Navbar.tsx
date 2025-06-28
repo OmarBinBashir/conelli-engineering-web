@@ -22,8 +22,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, isActive, onClick }) => 
     <Link
       href={href}
       className={cn(
-        'text-base font-medium transition-colors hover:text-gray-500',
-        isActive ? 'text-dark-gray' : 'text-gray-700'
+        'text-base font-medium transition-colors hover:text-slate-600',
+        isActive ? 'text-slate-800' : 'text-slate-700'
       )}
       onClick={onClick}
     >

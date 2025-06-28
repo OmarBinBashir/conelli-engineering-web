@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-4">
+      <div className="container mx-auto flex justify-between items-center px-6 sm:px-8">
         {/* Logo */}
         <Logo />
 
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 text-dark-gray" 
+          className="md:hidden p-2 text-slate-800" 
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
           mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container mx-auto py-4 px-4">
+        <div className="container mx-auto py-4 px-6 sm:px-8">
           <Navbar isMobile={true} onLinkClick={() => setMobileMenuOpen(false)} />
         </div>
       </div>
