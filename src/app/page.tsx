@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Lightbulb, Award, Leaf, HardHat, Building, Home, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import VideoSection from '@/components/home/VideoSection';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
@@ -130,6 +131,70 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
+      {/* Company Intro */}
+      <AnimatedSection>
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">About Conelli Engineering</h2>
+                <p className="text-lg mb-6 text-slate-600">
+                  Founded in 2016, Conelli Engineering Limited has grown to become one of Nigeria's most trusted engineering firms. With a commitment to quality and innovation, we've delivered over 50 successful projects across the country.
+                </p>
+                <p className="text-lg mb-6 text-slate-600">
+                  Our team of highly qualified engineers, architects, and project managers work together to transform complex challenges into elegant solutions, focusing on solving Africa's unique infrastructure challenges.
+                </p>
+                <Link 
+                  href="/group/profile-history" 
+                  className="text-slate-800 font-medium flex items-center hover:text-slate-600 transition-colors"
+                >
+                  Learn more about us
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-slate-900">Our Core Values</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <ShieldCheck className="h-6 w-6 text-slate-600 mr-3 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-slate-900">Integrity</h4>
+                      <p className="text-slate-600">Honest and ethical business practices in all our operations</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <Lightbulb className="h-6 w-6 text-slate-600 mr-3 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-slate-900">Innovation</h4>
+                      <p className="text-slate-600">Pushing boundaries with cutting-edge solutions</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="h-6 w-6 text-slate-600 mr-3 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-slate-900">Excellence</h4>
+                      <p className="text-slate-600">Uncompromising commitment to quality and standards</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <Leaf className="h-6 w-6 text-slate-600 mr-3 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-slate-900">Sustainability</h4>
+                      <p className="text-slate-600">Building for a better, greener future</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Video Section */}
+      <VideoSection />
+
       {/* Project References Carousel */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-50">
@@ -212,67 +277,6 @@ export default function HomePage() {
               >
                 <ChevronRight size={20} />
               </button>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Company Intro */}
-      <AnimatedSection>
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">About Conelli Engineering</h2>
-                <p className="text-lg mb-6 text-slate-600">
-                  Founded in 2016, Conelli Engineering Limited has grown to become one of Nigeria's most trusted engineering firms. With a commitment to quality and innovation, we've delivered over 50 successful projects across the country.
-                </p>
-                <p className="text-lg mb-6 text-slate-600">
-                  Our team of highly qualified engineers, architects, and project managers work together to transform complex challenges into elegant solutions, focusing on solving Africa's unique infrastructure challenges.
-                </p>
-                <Link 
-                  href="/group/about-us" 
-                  className="text-slate-800 font-medium flex items-center hover:text-slate-600 transition-colors"
-                >
-                  Learn more about us
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-slate-900">Our Core Values</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-6 w-6 text-slate-600 mr-3 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-slate-900">Integrity</h4>
-                      <p className="text-slate-600">Honest and ethical business practices in all our operations</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Lightbulb className="h-6 w-6 text-slate-600 mr-3 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-slate-900">Innovation</h4>
-                      <p className="text-slate-600">Pushing boundaries with cutting-edge solutions</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Award className="h-6 w-6 text-slate-600 mr-3 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-slate-900">Excellence</h4>
-                      <p className="text-slate-600">Uncompromising commitment to quality and standards</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Leaf className="h-6 w-6 text-slate-600 mr-3 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-slate-900">Sustainability</h4>
-                      <p className="text-slate-600">Building for a better, greener future</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </section>
