@@ -16,7 +16,7 @@ export default function AboutPage() {
             className="object-cover opacity-40"
           />
         </div>
-        <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
           <AnimatedSection>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
             <p className="text-xl max-w-3xl text-slate-200">
@@ -29,10 +29,10 @@ export default function AboutPage() {
       {/* Company Profile */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-slate-900">Company Profile</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Company Profile</h2>
                 <p className="text-lg mb-6 text-slate-600">
                   Founded in 2016, Conelli Engineering Limited has established itself as a premier engineering company in Nigeria, 
                   specializing in infrastructure development, construction, and civil engineering services.
@@ -62,10 +62,10 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-900 text-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-slate-800/50 p-8 rounded-lg">
-                <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
                 <p className="text-lg mb-4 text-slate-200">
                   To deliver innovative engineering solutions that contribute to Nigeria's development, 
                   while maintaining the highest standards of quality, safety, and environmental responsibility.
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div className="bg-slate-800/50 p-8 rounded-lg">
-                <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
                 <p className="text-lg mb-4 text-slate-200">
                   To be the leading engineering company in West Africa, recognized for excellence, innovation, 
                   and positive impact on the communities we serve.
@@ -98,8 +98,8 @@ export default function AboutPage() {
       {/* Leadership Team */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Leadership Team</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Leadership Team</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
@@ -144,8 +144,8 @@ export default function AboutPage() {
       {/* Our Values */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Our Values</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Our Values</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
@@ -195,8 +195,8 @@ export default function AboutPage() {
       {/* Call to Action */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Join Our Team</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Join Our Team</h2>
             <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-600">
               We're always looking for talented engineers, architects, and construction professionals to help us 
               build Nigeria's future.

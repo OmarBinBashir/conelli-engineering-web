@@ -102,7 +102,7 @@ export default function ProjectReferencesPage() {
               className="object-cover opacity-40"
             />
           </div>
-          <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Project References</h1>
             <p className="text-xl max-w-3xl text-slate-200">
               Explore our portfolio of completed and ongoing engineering and construction projects across Nigeria.
@@ -114,7 +114,7 @@ export default function ProjectReferencesPage() {
       {/* Filter Controls */}
       <AnimatedSection delay={0.2}>
         <section className="py-8 bg-white border-b">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <span className="font-medium text-slate-700">Filter by:</span>
@@ -158,7 +158,7 @@ export default function ProjectReferencesPage() {
       {/* Projects Grid */}
       <AnimatedSection delay={0.4}>
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <Link 
@@ -166,7 +166,7 @@ export default function ProjectReferencesPage() {
                   href={`/project-references/${project.slug}`} 
                   className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
                 >
-                  <div className="relative h-64">
+                  <div className="relative aspect-[4/3]">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -209,7 +209,7 @@ export default function ProjectReferencesPage() {
       {/* Pagination */}
       <AnimatedSection delay={0.6}>
         <section className="py-8 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex justify-center">
               <nav className="inline-flex items-center">
                 <button className="px-4 py-2 border border-slate-300 rounded-l-md border-r-0 hover:bg-slate-50 text-slate-700">
@@ -230,8 +230,8 @@ export default function ProjectReferencesPage() {
       {/* Call to Action */}
       <AnimatedSection delay={0.8}>
         <section className="py-20 lg:py-28 bg-slate-900 text-white">
-          <div className="container mx-auto px-6 sm:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6">Have a Project in Mind?</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Have a Project in Mind?</h2>
             <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-200">
               Let's discuss how Conelli Engineering can help bring your vision to life with our expertise 
               and proven track record of successful projects.

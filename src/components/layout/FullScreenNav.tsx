@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ChevronDown } from 'lucide-react';
 
 interface FullScreenNavProps {
   isOpen: boolean;
@@ -11,38 +11,26 @@ interface FullScreenNavProps {
 }
 
 const FullScreenNav: React.FC<FullScreenNavProps> = ({ isOpen, setIsOpen }) => {
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { 
-      label: 'Group', 
-      isHeading: true,
-      children: [
-        { label: 'About Us', href: '/group/about-us' },
-        { label: 'Management', href: '/group/management' },
-        { label: 'Products & Services', href: '/group/products-services' },
-      ]
-    },
-    { label: 'Expertise', href: '/expertise' },
-    { label: 'Project References', href: '/project-references' },
-    { label: 'Innovation', href: '/innovation' },
-    { label: 'Media', href: '/media' },
-    { label: 'Sustainability', href: '/sustainability' },
-    { label: 'Contact', href: '/contact' },
-  ];
+  const [isGroupOpen, setIsGroupOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    setIsGroupOpen(false);
+  };
 
   return (
     <motion.div
       initial={{ y: "-100%" }}
       animate={{ y: isOpen ? 0 : "-100%" }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: [0.25, 0.25, 0.25, 0.75] }}
       className="fixed inset-0 bg-slate-900 text-white z-50 flex flex-col"
     >
       {/* Header with close button */}
-      <div className="flex justify-between items-center p-6 border-b border-slate-700">
+      <div className="flex justify-between items-center p-8 border-b border-slate-700">
         <h2 className="text-2xl font-bold">Navigation</h2>
         <button
           onClick={() => setIsOpen(false)}
-          className="p-2 hover:bg-slate-800 rounded-full transition-colors"
+          className="p-3 hover:bg-slate-800 rounded-full transition-colors"
           aria-label="Close navigation"
         >
           <X size={24} />
@@ -51,41 +39,135 @@ const FullScreenNav: React.FC<FullScreenNavProps> = ({ isOpen, setIsOpen }) => {
 
       {/* Navigation content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="container mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto px-8 py-12">
           <nav>
-            <ul className="space-y-6">
-              {navItems.map((item, index) => (
-                <li key={index}>
-                  {item.isHeading ? (
-                    <div>
-                      <h3 className="text-xl font-bold mb-4 text-slate-300">{item.label}</h3>
-                      {item.children && (
-                        <ul className="ml-4 space-y-3">
-                          {item.children.map((child, childIndex) => (
-                            <li key={childIndex}>
-                              <Link
-                                href={child.href}
-                                onClick={() => setIsOpen(false)}
-                                className="text-lg hover:text-slate-300 transition-colors block py-2"
-                              >
-                                {child.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="text-xl hover:text-slate-300 transition-colors block py-2"
+            <ul className="space-y-8">
+              {/* Home */}
+              <li>
+                <Link
+                  href="/"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Home
+                </Link>
+              </li>
+
+              {/* Group - Accordion */}
+              <li>
+                <button
+                  onClick={() => setIsGroupOpen(!isGroupOpen)}
+                  className="flex items-center justify-between w-full text-2xl font-medium hover:text-slate-300 transition-colors py-3"
+                >
+                  <span>Group</span>
+                  <motion.div
+                    animate={{ rotate: isGroupOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={24} />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {isGroupOpen && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="ml-6 mt-4 space-y-4 overflow-hidden"
                     >
-                      {item.label}
-                    </Link>
+                      <li>
+                        <Link
+                          href="/group/about-us"
+                          onClick={handleLinkClick}
+                          className="text-lg text-slate-300 hover:text-white transition-colors block py-2"
+                        >
+                          About Us
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/group/management"
+                          onClick={handleLinkClick}
+                          className="text-lg text-slate-300 hover:text-white transition-colors block py-2"
+                        >
+                          Management
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/group/products-services"
+                          onClick={handleLinkClick}
+                          className="text-lg text-slate-300 hover:text-white transition-colors block py-2"
+                        >
+                          Products & Services
+                        </Link>
+                      </li>
+                    </motion.ul>
                   )}
-                </li>
-              ))}
+                </AnimatePresence>
+              </li>
+
+              {/* Other main navigation items */}
+              <li>
+                <Link
+                  href="/expertise"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Expertise
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/project-references"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Project References
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/innovation"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Innovation
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/media"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Media
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/sustainability"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Sustainability
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/contact"
+                  onClick={handleLinkClick}
+                  className="text-2xl font-medium hover:text-slate-300 transition-colors block py-3"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

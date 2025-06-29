@@ -16,7 +16,7 @@ export default function ContactPage() {
             className="object-cover opacity-40"
           />
         </div>
-        <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
           <AnimatedSection>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl max-w-3xl text-slate-200">
@@ -29,11 +29,11 @@ export default function ContactPage() {
       {/* Contact Information */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-slate-900">Get in Touch</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Get in Touch</h2>
                 <p className="mb-8 text-lg text-slate-600">
                   Fill out the form below and our team will get back to you within 24 hours.
                 </p>
@@ -140,7 +140,7 @@ export default function ContactPage() {
 
               {/* Contact Information */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-slate-900">Our Offices</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Our Offices</h2>
                 
                 <div className="space-y-8">
                   {/* Abuja Office 1 */}
@@ -230,8 +230,8 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Frequently Asked Questions</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Frequently Asked Questions</h2>
             
             <div className="max-w-3xl mx-auto space-y-6">
               {[
@@ -276,8 +276,8 @@ export default function ContactPage() {
       {/* Call to Action */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-900 text-white">
-          <div className="container mx-auto px-6 sm:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6">Let's Build Something Great Together</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Build Something Great Together</h2>
             <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-200">
               Whether you're looking to start a new project, explore career opportunities, or form a strategic partnership,
               we're here to help you turn your vision into reality.

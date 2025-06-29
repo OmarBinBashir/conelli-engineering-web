@@ -97,7 +97,7 @@ export default function ServicesPage() {
             className="object-cover opacity-40"
           />
         </div>
-        <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
           <AnimatedSection>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
             <p className="text-xl max-w-3xl text-slate-200">
@@ -110,9 +110,9 @@ export default function ServicesPage() {
       {/* Services Overview */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-slate-900">Comprehensive Engineering Solutions</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Comprehensive Engineering Solutions</h2>
               <p className="text-lg max-w-3xl mx-auto text-slate-600">
                 Conelli Engineering offers end-to-end services from project conceptualization and design to 
                 construction and handover. Our integrated approach ensures seamless project execution.
@@ -142,7 +142,7 @@ export default function ServicesPage() {
             id={service.id} 
             className={`py-20 lg:py-28 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
           >
-            <div className="container mx-auto px-6 sm:px-8">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
               <div className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                   <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <h2 className="text-3xl font-bold mb-6 text-slate-900">{service.title}</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">{service.title}</h2>
                   <p className="text-lg mb-6 text-slate-600">{service.description}</p>
                   <h3 className="text-xl font-semibold mb-4 text-slate-900">Key Services:</h3>
                   <ul className="space-y-2">
@@ -178,8 +178,8 @@ export default function ServicesPage() {
       {/* Our Approach */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-slate-900 text-white">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center">Our Approach</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our Approach</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[
                 {
@@ -219,8 +219,8 @@ export default function ServicesPage() {
       {/* Call to Action */}
       <AnimatedSection>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Ready to Start Your Project?</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Ready to Start Your Project?</h2>
             <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-600">
               Contact us today to discuss how Conelli Engineering can help bring your vision to life with 
               our comprehensive engineering and construction services.

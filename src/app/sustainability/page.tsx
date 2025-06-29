@@ -153,7 +153,7 @@ export default function SustainabilityPage() {
             />
             <div className="absolute inset-0 bg-slate-900/50"></div>
           </div>
-          <div className="container mx-auto px-6 sm:px-8 z-10 text-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Sustainability</h1>
             <p className="text-xl max-w-3xl text-slate-200">
               Our commitment to environmental stewardship, social responsibility, and sustainable engineering practices.
@@ -165,9 +165,9 @@ export default function SustainabilityPage() {
       {/* Introduction */}
       <AnimatedSection delay={0.2}>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 text-slate-900">Our Sustainability Vision</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Our Sustainability Vision</h2>
               <p className="text-lg mb-6 text-slate-600">
                 At Conelli Engineering, sustainability isn't just a buzzword—it's a fundamental principle that guides our operations, 
                 designs, and project execution. We believe that responsible engineering is about creating structures and systems that not only serve 
@@ -185,8 +185,8 @@ export default function SustainabilityPage() {
       {/* Environmental Initiatives */}
       <AnimatedSection delay={0.4}>
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Environmental Initiatives</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Environmental Initiatives</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {initiatives.map((initiative, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow">
@@ -209,8 +209,8 @@ export default function SustainabilityPage() {
       {/* Sustainable Projects Showcase */}
       <AnimatedSection delay={0.6}>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center text-slate-900">Sustainable Project Highlights</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-slate-900">Sustainable Project Highlights</h2>
             <div className="grid md:grid-cols-2 gap-12">
               {projects.map((project, index) => (
                 <div key={index} className="flex flex-col md:flex-row gap-8">
@@ -249,8 +249,8 @@ export default function SustainabilityPage() {
       {/* Community Engagement */}
       <AnimatedSection delay={0.8}>
         <section className="py-20 lg:py-28 bg-slate-50">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Community Engagement</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Community Engagement</h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <h3 className="text-2xl font-bold mb-6 text-slate-900">Local Impact Programs</h3>
@@ -336,8 +336,8 @@ export default function SustainabilityPage() {
       {/* Sustainability Goals */}
       <AnimatedSection delay={1.0}>
         <section className="py-20 lg:py-28 bg-slate-900 text-white">
-          <div className="container mx-auto px-6 sm:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center">Our 2030 Sustainability Goals</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Our 2030 Sustainability Goals</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {goals.map((goal, index) => (
                 <div key={index} className="bg-slate-800/50 p-8 rounded-lg">
@@ -362,9 +362,9 @@ export default function SustainabilityPage() {
       {/* The Conelli Foundation */}
       <AnimatedSection delay={1.2}>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6 text-center text-slate-900">The Conelli Foundation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-slate-900">The Conelli Foundation</h2>
               <p className="text-lg mb-6 text-slate-600">
                 This is an independent private philanthropic organisation initiated by our Founder Abdulkadir Abdullahi. 
                 The foundation has committed to sustainable community development projects. Conelli Foundation focuses on 
@@ -388,8 +388,8 @@ export default function SustainabilityPage() {
       {/* Call to Action */}
       <AnimatedSection delay={1.4}>
         <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-6 sm:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-slate-900">Partner With Us for Sustainable Development</h2>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Partner With Us for Sustainable Development</h2>
             <p className="text-lg max-w-3xl mx-auto mb-8 text-slate-600">
               Let Conelli Engineering help you achieve your sustainability goals with innovative design and construction 
               solutions that make a positive impact on the environment and communities.
