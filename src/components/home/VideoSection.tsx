@@ -73,6 +73,7 @@ const VideoSection: React.FC = () => {
 
   return (
     <AnimatedSection>
+      {/* Full-Bleed Video Section */}
       <section className="py-20 lg:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -84,9 +85,11 @@ const VideoSection: React.FC = () => {
               construction and engineering solutions across Nigeria.
             </p>
           </div>
+        </div>
 
-          {/* Video Player Container */}
-          <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl">
+        {/* Full-Bleed Video Player Container */}
+        <div className="w-full">
+          <div className="relative bg-black shadow-2xl">
             <div className="relative aspect-video">
               <ReactPlayer
                 ref={playerRef}
@@ -162,36 +165,36 @@ const VideoSection: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Playlist Navigation */}
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Video Playlist</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              {videoPlaylist.map((video, index) => (
-                <button
-                  key={video.id}
-                  onClick={() => {
-                    setCurrentVideoIndex(index);
-                    setIsPlaying(true);
-                    setHasStarted(true);
-                  }}
-                  className={`text-left p-4 rounded-lg transition-colors ${
-                    index === currentVideoIndex
-                      ? 'bg-slate-800 text-white'
-                      : 'bg-white hover:bg-slate-100 text-slate-800'
-                  }`}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                      index === currentVideoIndex ? 'bg-white text-slate-800' : 'bg-slate-200 text-slate-600'
-                    }`}>
-                      {index + 1}
-                    </div>
-                    <span className="font-medium">{video.title}</span>
+        {/* Playlist Navigation */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-12">
+          <h3 className="text-lg font-semibold mb-4 text-slate-900">Video Playlist</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            {videoPlaylist.map((video, index) => (
+              <button
+                key={video.id}
+                onClick={() => {
+                  setCurrentVideoIndex(index);
+                  setIsPlaying(true);
+                  setHasStarted(true);
+                }}
+                className={`text-left p-4 rounded-lg transition-colors ${
+                  index === currentVideoIndex
+                    ? 'bg-slate-800 text-white'
+                    : 'bg-white hover:bg-slate-100 text-slate-800'
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                    index === currentVideoIndex ? 'bg-white text-slate-800' : 'bg-slate-200 text-slate-600'
+                  }`}>
+                    {index + 1}
                   </div>
-                </button>
-              ))}
-            </div>
+                  <span className="font-medium">{video.title}</span>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </section>

@@ -3,30 +3,25 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronDown, ChevronRight } from 'lucide-react';
+import { X, ArrowLeft } from 'lucide-react';
 
 interface SideNavigationProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
 
+interface NavigationItem {
+  title: string;
+  href?: string;
+  key?: string;
+  children?: { title: string; href: string }[];
+}
+
 const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) => {
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [currentView, setCurrentView] = useState<'main' | string>('main');
+  const [viewHistory, setViewHistory] = useState<string[]>(['main']);
 
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => 
-      prev.includes(section) 
-        ? prev.filter(s => s !== section)
-        : [...prev, section]
-    );
-  };
-
-  const handleLinkClick = () => {
-    setIsOpen(false);
-    setExpandedSections([]);
-  };
-
-  const navigationItems = [
+  const navigationItems: NavigationItem[] = [
     {
       title: 'About Conelli Engineering',
       key: 'about',
@@ -56,6 +51,37 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
     { title: 'Contact', href: '/contact' },
   ];
 
+  const handleDrillDown = (key: string) => {
+    setCurrentView(key);
+    setViewHistory(prev => [...prev, key]);
+  };
+
+  const handleBack = () => {
+    const newHistory = viewHistory.slice(0, -1);
+    setViewHistory(newHistory);
+    setCurrentView(newHistory[newHistory.length - 1] || 'main');
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    setCurrentView('main');
+    setViewHistory(['main']);
+  };
+
+  const getCurrentItems = () => {
+    if (currentView === 'main') {
+      return navigationItems;
+    }
+    const parentItem = navigationItems.find(item => item.key === currentView);
+    return parentItem?.children || [];
+  };
+
+  const getCurrentTitle = () => {
+    if (currentView === 'main') return null;
+    const parentItem = navigationItems.find(item => item.key === currentView);
+    return parentItem?.title;
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -70,22 +96,21 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Side Panel */}
+          {/* Side Panel - Slides from RIGHT */}
           <motion.div
-            initial={{ x: '-100%' }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
+            exit={{ x: '100%' }}
             transition={{ 
               type: 'spring',
               damping: 25,
               stiffness: 200,
               duration: 0.4
             }}
-            className="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 overflow-y-auto"
+            className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 overflow-hidden"
           >
-            {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-slate-200">
-              <h2 className="text-xl font-bold text-slate-900">Navigation</h2>
+            {/* Close Button - Top Right */}
+            <div className="absolute top-4 right-4 z-10">
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 hover:bg-slate-100 rounded-full transition-colors"
@@ -95,70 +120,107 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
               </button>
             </div>
 
-            {/* Navigation Content */}
-            <nav className="p-6">
-              <ul className="space-y-2">
-                {navigationItems.map((item) => (
-                  <li key={item.title}>
-                    {item.children ? (
-                      <div>
-                        <button
-                          onClick={() => toggleSection(item.key!)}
-                          className="flex items-center justify-between w-full text-left py-3 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium"
-                        >
-                          <span>{item.title}</span>
-                          <motion.div
-                            animate={{ 
-                              rotate: expandedSections.includes(item.key!) ? 90 : 0 
-                            }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ChevronRight size={16} className="text-slate-500" />
-                          </motion.div>
-                        </button>
-                        <AnimatePresence>
-                          {expandedSections.includes(item.key!) && (
-                            <motion.ul
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="ml-4 mt-2 space-y-1 overflow-hidden"
-                            >
-                              {item.children.map((child) => (
-                                <li key={child.title}>
-                                  <Link
-                                    href={child.href}
-                                    onClick={handleLinkClick}
-                                    className="block py-2 px-4 text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-md transition-colors"
+            {/* Navigation Content Container */}
+            <div className="h-full overflow-y-auto scrollbar-hide">
+              <div className="pt-16 pb-6">
+                {/* Main Menu View */}
+                <AnimatePresence mode="wait">
+                  {currentView === 'main' ? (
+                    <motion.div
+                      key="main"
+                      initial={{ x: 0 }}
+                      animate={{ x: 0 }}
+                      exit={{ x: '-100%' }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="px-6"
+                    >
+                      <nav>
+                        <ul className="space-y-2">
+                          {navigationItems.map((item) => (
+                            <li key={item.title}>
+                              {item.children ? (
+                                <button
+                                  onClick={() => handleDrillDown(item.key!)}
+                                  className="flex items-center justify-between w-full text-left py-4 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
+                                >
+                                  <span>{item.title}</span>
+                                  <svg 
+                                    className="w-5 h-5 text-slate-400" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 24 24"
                                   >
-                                    {child.title}
-                                  </Link>
-                                </li>
-                              ))}
-                            </motion.ul>
-                          )}
-                        </AnimatePresence>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </button>
+                              ) : (
+                                <Link
+                                  href={item.href!}
+                                  onClick={handleLinkClick}
+                                  className="block py-4 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
+                                >
+                                  {item.title}
+                                </Link>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key={currentView}
+                      initial={{ x: '100%' }}
+                      animate={{ x: 0 }}
+                      exit={{ x: '100%' }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="px-6"
+                    >
+                      {/* Back Button */}
+                      <div className="mb-6">
+                        <button
+                          onClick={handleBack}
+                          className="flex items-center text-slate-600 hover:text-slate-800 transition-colors py-2"
+                        >
+                          <ArrowLeft size={20} className="mr-2" />
+                          <span className="font-medium">Back</span>
+                        </button>
                       </div>
-                    ) : (
-                      <Link
-                        href={item.href!}
-                        onClick={handleLinkClick}
-                        className="block py-3 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium"
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
 
-            {/* Footer */}
-            <div className="p-6 border-t border-slate-200 mt-auto">
-              <div className="text-sm text-slate-500">
-                <p className="mb-2">Conelli Engineering Limited</p>
-                <p>Building Nigeria's Future</p>
+                      {/* Sub-menu Title */}
+                      <div className="mb-6">
+                        <h3 className="text-xl font-bold text-slate-900">
+                          {getCurrentTitle()}
+                        </h3>
+                      </div>
+
+                      {/* Sub-menu Items */}
+                      <nav>
+                        <ul className="space-y-2">
+                          {getCurrentItems().map((item: any) => (
+                            <li key={item.title}>
+                              <Link
+                                href={item.href}
+                                onClick={handleLinkClick}
+                                className="block py-3 px-4 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+                              >
+                                {item.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-4 border-t border-slate-200 mt-auto">
+                <div className="text-sm text-slate-500">
+                  <p className="mb-1 font-medium">Conelli Engineering Limited</p>
+                  <p>Building Nigeria's Future</p>
+                </div>
               </div>
             </div>
           </motion.div>

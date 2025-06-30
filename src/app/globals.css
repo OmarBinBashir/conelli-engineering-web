@@ -99,6 +99,16 @@ body {
   background: #475569;
 }
 
+/* Hide scrollbar utility class */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 /* Custom styles for the Conelli Engineering website */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600;

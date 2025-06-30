@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '@/components/shared/Logo';
 import SideNavigation from './SideNavigation';
-import { Menu } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,13 +34,38 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Logo />
 
-          {/* Burger Menu Button */}
+          {/* Animated Burger/Close Menu Button */}
           <button 
-            className="p-3 text-slate-800 hover:bg-slate-100 rounded-md transition-colors" 
-            onClick={() => setIsNavOpen(true)}
-            aria-label="Open navigation menu"
+            className="p-3 text-slate-800 hover:bg-slate-100 rounded-md transition-colors relative" 
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            <Menu size={24} />
+            <div className="w-6 h-6 relative">
+              {/* Burger to X Animation */}
+              <motion.span
+                className="absolute left-0 top-1 w-6 h-0.5 bg-slate-800 rounded-full"
+                animate={{
+                  rotate: isNavOpen ? 45 : 0,
+                  y: isNavOpen ? 8 : 0,
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+              <motion.span
+                className="absolute left-0 top-3 w-6 h-0.5 bg-slate-800 rounded-full"
+                animate={{
+                  opacity: isNavOpen ? 0 : 1,
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+              <motion.span
+                className="absolute left-0 top-5 w-6 h-0.5 bg-slate-800 rounded-full"
+                animate={{
+                  rotate: isNavOpen ? -45 : 0,
+                  y: isNavOpen ? -8 : 0,
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+            </div>
           </button>
         </div>
       </header>
