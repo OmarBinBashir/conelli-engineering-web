@@ -86,7 +86,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop - Covers entire viewport including header */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -96,7 +96,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Side Panel - Slides from RIGHT */}
+          {/* Side Panel - Positioned below header with responsive width */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -107,10 +107,10 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
               stiffness: 200,
               duration: 0.4
             }}
-            className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 overflow-hidden"
+            className="fixed top-20 right-0 h-[calc(100vh-5rem)] w-4/5 md:w-2/5 bg-white shadow-2xl z-50 overflow-hidden"
           >
             {/* Close Button - Top Right */}
-            <div className="absolute top-4 right-4 z-10">
+            <div className="absolute top-6 right-6 z-10">
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 hover:bg-slate-100 rounded-full transition-colors"
@@ -132,16 +132,16 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
                       animate={{ x: 0 }}
                       exit={{ x: '-100%' }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="px-6"
+                      className="px-8"
                     >
                       <nav>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                           {navigationItems.map((item) => (
                             <li key={item.title}>
                               {item.children ? (
                                 <button
                                   onClick={() => handleDrillDown(item.key!)}
-                                  className="flex items-center justify-between w-full text-left py-4 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
+                                  className="flex items-center justify-between w-full text-left py-4 px-6 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
                                 >
                                   <span>{item.title}</span>
                                   <svg 
@@ -157,7 +157,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
                                 <Link
                                   href={item.href!}
                                   onClick={handleLinkClick}
-                                  className="block py-4 px-4 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
+                                  className="block py-4 px-6 text-slate-800 hover:bg-slate-50 rounded-md transition-colors font-medium text-lg"
                                 >
                                   {item.title}
                                 </Link>
@@ -174,21 +174,21 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
                       animate={{ x: 0 }}
                       exit={{ x: '100%' }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="px-6"
+                      className="px-8"
                     >
                       {/* Back Button */}
-                      <div className="mb-6">
+                      <div className="mb-8">
                         <button
                           onClick={handleBack}
-                          className="flex items-center text-slate-600 hover:text-slate-800 transition-colors py-2"
+                          className="flex items-center text-slate-600 hover:text-slate-800 transition-colors py-3"
                         >
-                          <ArrowLeft size={20} className="mr-2" />
+                          <ArrowLeft size={20} className="mr-3" />
                           <span className="font-medium">Back</span>
                         </button>
                       </div>
 
                       {/* Sub-menu Title */}
-                      <div className="mb-6">
+                      <div className="mb-8">
                         <h3 className="text-xl font-bold text-slate-900">
                           {getCurrentTitle()}
                         </h3>
@@ -196,13 +196,13 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
 
                       {/* Sub-menu Items */}
                       <nav>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                           {getCurrentItems().map((item: any) => (
                             <li key={item.title}>
                               <Link
                                 href={item.href}
                                 onClick={handleLinkClick}
-                                className="block py-3 px-4 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+                                className="block py-4 px-6 text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
                               >
                                 {item.title}
                               </Link>
@@ -216,7 +216,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
               </div>
 
               {/* Footer */}
-              <div className="px-6 py-4 border-t border-slate-200 mt-auto">
+              <div className="px-8 py-6 border-t border-slate-200 mt-auto">
                 <div className="text-sm text-slate-500">
                   <p className="mb-1 font-medium">Conelli Engineering Limited</p>
                   <p>Building Nigeria's Future</p>
