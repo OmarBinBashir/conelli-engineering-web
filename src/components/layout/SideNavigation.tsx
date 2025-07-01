@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 interface SideNavigationProps {
   isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  toggleMenu: () => void;
 }
 
 interface NavigationItem {
@@ -17,7 +17,7 @@ interface NavigationItem {
   children?: { title: string; href: string }[];
 }
 
-const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) => {
+const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, toggleMenu }) => {
   const [currentView, setCurrentView] = useState<'main' | string>('main');
   const [viewHistory, setViewHistory] = useState<string[]>(['main']);
 
@@ -63,7 +63,7 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false);
+    toggleMenu();
     setCurrentView('main');
     setViewHistory(['main']);
   };
@@ -86,17 +86,17 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop - Covers entire viewport including header */}
+          {/* Backdrop - z-40 to stay below header */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-black/50 z-40"
-            onClick={() => setIsOpen(false)}
+            onClick={toggleMenu}
           />
 
-          {/* Side Panel - Positioned below header with responsive width */}
+          {/* Side Panel - z-40 to stay below header, positioned below header */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -107,22 +107,11 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, setIsOpen }) =>
               stiffness: 200,
               duration: 0.4
             }}
-            className="fixed top-20 right-0 h-[calc(100vh-5rem)] w-4/5 md:w-2/5 bg-white shadow-2xl z-50 overflow-hidden"
+            className="fixed top-20 right-0 h-[calc(100vh-5rem)] w-4/5 md:w-2/5 bg-white shadow-2xl z-40 overflow-hidden"
           >
-            {/* Close Button - Top Right */}
-            <div className="absolute top-6 right-6 z-10">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
-                aria-label="Close navigation"
-              >
-                <X size={20} className="text-slate-600" />
-              </button>
-            </div>
-
             {/* Navigation Content Container */}
             <div className="h-full overflow-y-auto scrollbar-hide">
-              <div className="pt-16 pb-6">
+              <div className="pt-8 pb-6">
                 {/* Main Menu View */}
                 <AnimatePresence mode="wait">
                   {currentView === 'main' ? (
