@@ -23,10 +23,14 @@ const Header: React.FC = () => {
     };
   }, [scrolled]);
 
+  const toggleMenu = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <>
       <header 
-        className={`sticky top-0 w-full z-40 transition-all duration-300 ${
+        className={`sticky top-0 w-full relative z-50 transition-all duration-300 ${
           scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-5'
         }`}
       >
@@ -37,7 +41,7 @@ const Header: React.FC = () => {
           {/* Animated Burger/Close Menu Button */}
           <button 
             className="p-3 text-slate-800 hover:bg-slate-100 rounded-md transition-colors relative" 
-            onClick={() => setIsNavOpen(!isNavOpen)}
+            onClick={toggleMenu}
             aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             <div className="w-6 h-6 relative">
@@ -70,8 +74,8 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Side Navigation */}
-      <SideNavigation isOpen={isNavOpen} setIsOpen={setIsNavOpen} />
+      {/* Side Navigation - Rendered conditionally from Header */}
+      <SideNavigation isOpen={isNavOpen} toggleMenu={toggleMenu} />
     </>
   );
 };
