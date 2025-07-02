@@ -1,27 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Logo from '@/components/shared/Logo';
 import SideNavigation from './SideNavigation';
 import { motion } from 'framer-motion';
+import { Mail, Search } from 'lucide-react';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
 
   const toggleMenu = () => {
     setIsNavOpen(!isNavOpen);
@@ -30,15 +17,22 @@ const Header: React.FC = () => {
   return (
     <>
       <header 
-        className={`sticky top-0 w-full relative z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-5'
-        }`}
+        className="sticky top-0 z-50 w-full bg-white shadow-md h-20 flex items-center justify-between px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-8">
-          {/* Logo */}
-          <Logo />
+        {/* Logo */}
+        <Logo />
 
-          {/* Animated Burger/Close Menu Button */}
+        {/* Right-side icons and menu */}
+        <div className="flex items-center gap-6">
+          {/* Email Icon */}
+          <a href="mailto:info@conelliengineering.com" aria-label="Email">
+            <Mail className="w-6 h-6 text-slate-800 hover:text-slate-600 transition-colors" />
+          </a>
+          {/* Search Icon */}
+          <Link href="/search" aria-label="Search">
+            <Search className="w-6 h-6 text-slate-800 hover:text-slate-600 transition-colors" />
+          </Link>
+          {/* Burger/Close Menu Button */}
           <button 
             className="p-3 text-slate-800 hover:bg-slate-100 rounded-md transition-colors relative" 
             onClick={toggleMenu}

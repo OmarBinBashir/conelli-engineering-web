@@ -27,9 +27,9 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, toggleMenu }) =
       key: 'about',
       children: [
         { title: 'Profile & History', href: '/group/profile-history' },
-        { title: 'Values', href: '/group/values' },
+        { title: 'Our Values', href: '/group/values' },
         { title: 'Management', href: '/group/management' },
-        { title: 'Resources', href: '/group/products-services' },
+        { title: 'Products & Services', href: '/group/products-services' },
       ]
     },
     {
@@ -44,10 +44,10 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ isOpen, toggleMenu }) =
       ]
     },
     { title: 'Project References', href: '/project-references' },
-    { title: 'Products & Services', href: '/group/products-services' },
     { title: 'Innovation', href: '/innovation' },
     { title: 'Media', href: '/media' },
     { title: 'Sustainability', href: '/sustainability' },
+    { title: 'Careers', href: '/careers' },
     { title: 'Contact', href: '/contact' },
   ];
 

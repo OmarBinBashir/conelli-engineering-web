@@ -99,7 +99,7 @@ export default function ServicesPage() {
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 z-10 text-white">
           <AnimatedSection>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Expertise</h1>
             <p className="text-xl max-w-3xl text-slate-200">
               Comprehensive engineering and construction services delivered with excellence and precision.
             </p>
@@ -113,6 +113,7 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Comprehensive Engineering Solutions</h2>
+              <h2 className="text-2xl font-semibold mb-4">Core Competencies</h2>
               <p className="text-lg max-w-3xl mx-auto text-slate-600">
                 Conelli Engineering offers end-to-end services from project conceptualization and design to 
                 construction and handover. Our integrated approach ensures seamless project execution.

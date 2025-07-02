@@ -366,10 +366,7 @@ export default function SustainabilityPage() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-slate-900">The Conelli Foundation</h2>
               <p className="text-lg mb-6 text-slate-600">
-                This is an independent private philanthropic organisation initiated by our Founder Abdulkadir Abdullahi. 
-                The foundation has committed to sustainable community development projects. Conelli Foundation focuses on 
-                providing assistance to people in critical need, supporting education initiatives, and promoting sustainable 
-                development in communities across Nigeria.
+                <strong>Future Initiative:</strong> The Conelli Foundation is a philanthropic vision initiated by our Founder Abdulkadir Abdullahi. While not yet operational, the foundation is planned to support sustainable community development projects, education, and emergency relief in the future. Stay tuned for updates as we work to bring this important initiative to life.
               </p>
               <div className="grid md:grid-cols-3 gap-8 mt-12">
                 {foundationInitiatives.map((initiative, index) => (
